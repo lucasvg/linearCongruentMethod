@@ -19,7 +19,7 @@ numbers = []
 curX = x0
 for i in xrange(0,n):
 	curX = (a*curX + c) % m
-	numbers.append(curX)
+	numbers.append(curX/float(m))
 ##### ends generating random numbers
 
 print numbers
