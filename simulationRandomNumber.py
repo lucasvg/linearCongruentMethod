@@ -1,4 +1,5 @@
 import sys
+import matplotlib.pyplot as plt
 
 #### load parameters of Linear Congruent method
 # a of L. C. formula
@@ -22,3 +23,10 @@ for i in xrange(0,n):
 ##### ends generating random numbers
 
 print numbers
+
+
+plt.hist(numbers)
+plt.title("Histogram")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.show()
