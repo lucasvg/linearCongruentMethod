@@ -27,8 +27,9 @@ for i in xrange(0,n):
 	expDistrNumbers.append( (-1/rate) * math.log(uniformNumber) )
 
 ##### ends generating random numbers
-
-plt.hist(expDistrNumbers)
+data = expDistrNumbers
+binwidth = 1
+plt.hist(data, bins=range(int(math.floor(min(data))), int(math.ceil(max(data) + binwidth)), binwidth))
 plt.title("Histogram")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
