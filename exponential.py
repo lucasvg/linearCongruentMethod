@@ -16,17 +16,20 @@ n = 100000
 # exponential rate
 rate = 1
 
-uniformDistrNumbers = []
-expDistrNumbers = []
-##### generates random numbers
-curX = x0
-for i in xrange(0,n):
-	curX = (a*curX + c) % m
-	uniformNumber = curX/float(m)
-	uniformDistrNumbers.append(uniformNumber)
-	expDistrNumbers.append( (-1/rate) * math.log(uniformNumber) )
+def genUniform(a, m, c, x0, n):
+	uniformDistrNumbers = []
+	curX = x0
+	for i in xrange(0,n):
+		curX = (a*curX + c) % m
+		uniformNumber = curX/float(m)
+		uniformDistrNumbers.append(uniformNumber)
+	return uniformDistrNumbers
 
-##### ends generating random numbers
+uDistr = genUniform(a, m, c, x0, n)
+expDistrNumbers = []
+for u in uDistr:
+	expDistrNumbers.append( (-1/rate) * math.log(u) )
+
 data = expDistrNumbers
 binwidth = 1
 plt.hist(data, bins=range(int(math.floor(min(data))), int(math.ceil(max(data) + binwidth)), binwidth))
