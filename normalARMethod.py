@@ -26,7 +26,7 @@ for i in range(0, n):
 # ends computing normal
 
 data = normalDistrNumbers
-plt.hist(data, bins=50)
+plt.hist(data, bins=50, weights=numpy.zeros_like(data) + 1. / len(data))
 plt.title("Histogram")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
