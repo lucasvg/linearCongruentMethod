@@ -26,8 +26,22 @@ for i in range(0, n):
 # ends computing normal
 
 data = normalDistrNumbers
+figure1 = plt.figure(1)
 plt.hist(data, bins=50, weights=numpy.zeros_like(data) + 1. / len(data))
 plt.title("Histogram")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
-plt.show()
+figure1.show()
+
+
+# normal distribution generated with native function
+normalDistrNumbers = numpy.random.normal(loc=0.0, scale=1.0, size=n)
+data = normalDistrNumbers
+figure2 = plt.figure(2)
+plt.hist(data, bins=50, weights=numpy.zeros_like(data) + 1. / len(data))
+plt.title("Histogram")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+figure2.show()
+
+raw_input()
