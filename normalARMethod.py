@@ -25,6 +25,10 @@ for i in range(0, n):
 			normalDistrNumbers.append(-exp)
 # ends computing normal
 
+meanOfTriesByAcceptance = float(n) / len(normalDistrNumbers)
+print 'Mean M = ' + str(meanOfTriesByAcceptance)
+print 'Expected M = ' + str(math.sqrt(2 * math.e / math.pi))
+
 data = normalDistrNumbers
 figure1 = plt.figure(1)
 plt.hist(data, bins=50, weights=numpy.zeros_like(data) + 1. / len(data))
